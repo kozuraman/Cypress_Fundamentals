@@ -7,7 +7,7 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/integration/examples/*.js',
     screenshotsFolder: 'cypress/screenshots',
-    screenshotOnRunFailure: true,
+    screenshotOnRunFailure: false,
     supportFile:false,
     defaultCommandTimeout: 10000
   },

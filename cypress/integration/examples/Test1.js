@@ -22,6 +22,7 @@ describe("programiz pro SignIn fow", () => {
   cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
   cy.get(".search-keyword").type('ca');
   cy.wait(4000)
+  //Selenium get hit url in browser, cypress get acts like findElemeent of selenium
   cy.get('.product:visible').should('have.length',4)
   //parent child chaining
   cy.get('.products').as('productLocator') //alias - making centerlized
