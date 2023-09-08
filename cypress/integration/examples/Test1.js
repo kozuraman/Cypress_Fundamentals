@@ -27,8 +27,11 @@ describe("programiz pro SignIn fow", () => {
   //parent child chaining
   cy.get('.products').as('productLocator') //alias - making centerlized
   cy.get('@productLocator').find('.product').should('have.length',4)
-  cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click()
+  cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click().then(function(){
+    console.log('sf') //print in the console
+  })
   
+  // Initialized the loop and dynamically clicking on the list
   cy.get('@productLocator').find('.product').each(($el, index, $list) => {
    const testVeg = $el.find('h4.product-name').text()
    if (testVeg.includes('Cashews')){
@@ -43,7 +46,7 @@ describe("programiz pro SignIn fow", () => {
   //This is to print in logs
   .then(function(logoelement)
   {
-    cy.log(logoelement.text())
+    cy.log(logoelement.text()) //print in the testrunner
   })
 })
 });
