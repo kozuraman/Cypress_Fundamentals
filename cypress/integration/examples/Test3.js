@@ -1,23 +1,12 @@
 //Cypress -Spec
 
 
-describe("programiz pro SignIn fow", () => {
+describe("Automation Practice", () => {
 //   beforeEach(() => {
 //     cy.visit(`https://staging.programiz.pro/login?ref=nlib`);
 //     cy.get(".sign__functions").contains("Sign In");
 //   });
 
-  it("Positive Scenario", () => {
-    cy.get("#exampleInputEmail1").type("raman+test3@parewalabs.com");
-    cy.get("#exampleInputEmail1").should(
-      "have.value",
-      "raman+test3@parewalabs.com"
-    );
-    cy.get("#exampleInputPassword1").type("Test@123");
-    cy.get("#exampleInputPassword1").should("have.value", "Test@123");
-    cy.get("form > .btn").contains("Sign In").click();
-    cy.url().should("include", "https://app.staging.programiz.pro/");
-  });
   it("Checkbox Scenario", ()=>{
   cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
   cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1') //Concate assertion -- simply use and keyword
@@ -29,7 +18,7 @@ describe("programiz pro SignIn fow", () => {
   cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
   cy.get('#dropdown-class-example').select('option2').should('have.value','option2')
 
-  //dynamic
+  //dynamic dropdown
   cy.get('#autocomplete').type('ind')
   cy.get('.ui-menu-item div').each(($el, index, $list) => {
    if($el.text()=="India")
@@ -50,8 +39,5 @@ describe("programiz pro SignIn fow", () => {
    cy.get('#displayed-text').should('be.visible')
 
    cy.get('input[value="radio1"]').check().should('have.value','radio1')
-
-
-
  })
 });
