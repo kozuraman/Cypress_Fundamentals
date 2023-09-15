@@ -1,23 +1,6 @@
 //Cypress -Spec
 
-
-describe("programiz pro SignIn fow", () => {
-//   beforeEach(() => {
-//     cy.visit(`https://staging.programiz.pro/login?ref=nlib`);
-//     cy.get(".sign__functions").contains("Sign In");
-//   });
-
-  it("Positive Scenario", () => {
-    cy.get("#exampleInputEmail1").type("raman+test3@parewalabs.com");
-    cy.get("#exampleInputEmail1").should(
-      "have.value",
-      "raman+test3@parewalabs.com"
-    );
-    cy.get("#exampleInputPassword1").type("Test@123");
-    cy.get("#exampleInputPassword1").should("have.value", "Test@123");
-    cy.get("form > .btn").contains("Sign In").click();
-    cy.url().should("include", "https://app.staging.programiz.pro/");
-  });
+describe("Table Practice", () => { 
   it("Checkbox Scenario", ()=>{
   cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
   cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1') //Concate assertion -- simply use and keyword
@@ -50,10 +33,10 @@ describe("programiz pro SignIn fow", () => {
   
   cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
   cy.get('tr td:nth-child(2)').each(($el, index, $list) => {
-  const text = $el.text() 
+  const text = $el.text()  
   if(text.includes("Python"))
   {
-    cy.get('tr td:nth-child(2)').eq(index).next().then(function(price)
+    cy.get('tr td:nth-child(2)').eq(index).next().then(function(price) //.next - exactly goes to the next sibling
     {
       const priceText = price.text()
       expect(priceText).to.equal('25')
