@@ -2,7 +2,7 @@
 
 describe("Table Practice", () => { 
   it("Checkbox Scenario", ()=>{
-  cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+  cy.visit(Cypress.env('url')+"/AutomationPractice/")
   cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1') //Concate assertion -- simply use and keyword
   cy.get('#checkBoxOption1').uncheck().should('not.be.checked')
   cy.get('input[type="checkbox"]').check(['option2','option3'])
@@ -31,7 +31,7 @@ describe("Table Practice", () => {
   
   // cy.go('back')
   
-  cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+  cy.visit(Cypress.env('url')+"/AutomationPractice/")
   cy.get('tr td:nth-child(2)').each(($el, index, $list) => {
   const text = $el.text()  
   if(text.includes("Python"))

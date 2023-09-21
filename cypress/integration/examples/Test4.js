@@ -2,7 +2,7 @@
 
 describe("Clicking on the windows popup", () => {
   it("Checkbox Scenario", () => {
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
     cy.get("#checkBoxOption1")
       .check()
       .should("be.checked")
@@ -11,7 +11,7 @@ describe("Clicking on the windows popup", () => {
     cy.get('input[type="checkbox"]').check(["option2", "option3"]);
   });
   it("Dropdown Scenario", () => {
-    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+    cy.visit(Cypress.env('url')+"/AutomationPractice/");
     cy.get("#alertbtn").click();
     cy.get('[value="Confirm"]').click();
     //window:alert - event
