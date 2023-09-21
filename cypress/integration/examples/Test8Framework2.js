@@ -26,7 +26,8 @@ describe("hooks practice", () => {
   it.only("Validate", function () {
     Cypress.config("defaultCommandTimeout", 8000); // time out for this specific spec. It's overwrite
     const productPage = new ProductPage();
-    cy.visit("https://rahulshettyacademy.com/angularpractice/");
+    
+    cy.visit(Cypress.env('url')+"/angularpractice/");
     cy.get(":nth-child(2) > .nav-link").click();
 
     cy.selectProduct("Blackberry");

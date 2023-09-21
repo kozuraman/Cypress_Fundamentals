@@ -5,7 +5,7 @@ describe("hooks practice", () => {
     });
   });
   it("practice", function () {
-    cy.visit("https://rahulshettyacademy.com/angularpractice/");
+    cy.visit(Cypress.env('url')+"/angularpractice/");
 
     cy.get("input[name='name']:nth-child(2)").type(this.data.name);
     cy.get("select", { timeout: 2000 }).select(this.data.gender);
