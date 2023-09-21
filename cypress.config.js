@@ -10,5 +10,6 @@ module.exports = defineConfig({
     screenshotOnRunFailure: false,
     supportFile: "cypress/support/commands.js",
     defaultCommandTimeout: 10000,
+    node_modules: "path/to/node_modules"
   },
 });

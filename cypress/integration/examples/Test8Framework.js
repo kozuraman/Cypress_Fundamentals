@@ -19,11 +19,16 @@ describe("hooks practice", () => {
       "2"
     );
     cy.get("#inlineRadio3").should("be.disabled");
+    cy.pause()
+
+    cy.get(":nth-child(2) > .nav-link").click()
+    //cy.debug() - Test debugging
   });
-  it.only("Validate", function () {
+
+  it("Validate", function () {
     cy.visit("https://rahulshettyacademy.com/angularpractice/");
     cy.get(":nth-child(2) > .nav-link").click();
-    console.log("cy", cy);
+    
 
     cy.selectProduct("Blackberry");
 
