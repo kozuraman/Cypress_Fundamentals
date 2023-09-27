@@ -17,8 +17,9 @@ Given("I open Ecommerce Page", function () {
 
 When("I add items to Cart", function () {
   homePage.getShopTab().click();
+  console.log(this.data);
 
-  this.data.productName.array.forEach(function (element) {
+  this.data.productName.forEach(function (element) {
     cy.selectProduct(element);
   });
   productPage.checkOutButton().click();
