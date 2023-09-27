@@ -1,6 +1,6 @@
 import { should } from "chai";
-import HomePage from "../pageObjects/HomePage";
-import ProductPage from "../pageObjects/ProductPage";
+import HomePage from "../../support/pageObjects/HomePage";
+import ProductPage from "../../support/pageObjects/ProductPage";
 
 describe("hooks practice", () => {
   before(function () {
@@ -10,6 +10,7 @@ describe("hooks practice", () => {
   });
   it("practice", function () {
     const homePage = new HomePage();
+    const productPage = new ProductPage();
     cy.visit("https://rahulshettyacademy.com/angularpractice/");
 
     homePage.getEditBox().type(this.data.name);
@@ -26,8 +27,8 @@ describe("hooks practice", () => {
   it.only("Validate", function () {
     Cypress.config("defaultCommandTimeout", 8000); // time out for this specific spec. It's overwrite
     const productPage = new ProductPage();
-    
-    cy.visit(Cypress.env('url')+"/angularpractice/");
+
+    cy.visit(Cypress.env("url") + "/angularpractice/");
     cy.get(":nth-child(2) > .nav-link").click();
 
     cy.selectProduct("Blackberry");
