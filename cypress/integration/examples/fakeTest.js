@@ -1,4 +1,4 @@
-describe("Mocking https request using intercept method ", () => {
+describe("Mocking https response using intercept method ", () => {
   it.only("My FirstTest case", () => {
     cy.visit("https://rahulshettyacademy.com/angularAppdemo/");
 
@@ -19,6 +19,14 @@ describe("Mocking https request using intercept method ", () => {
       }
     ).as("bookretrievals");
     cy.get(".btn-primary").click();
-    cy.wait("@bookretrievals");
+    cy.wait("@bookretrievals").then (({request,response})=>{ //Assert the response body
+        // Use cy.then() for assertions inside the callback
+        cy.get('tr').should('have.length',response.body.length+1)
+    })
+    // Assertions outside the callback
+    cy.get('p').should('have.text','Oops only 1 Book available')
+
+    //length of the response array = rows of the table
+
   });
 });
