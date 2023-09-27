@@ -37,3 +37,5 @@ module.exports = defineConfig({
     node_modules: "path/to/node_modules",
   },
 });
+
+//json file ->html format
